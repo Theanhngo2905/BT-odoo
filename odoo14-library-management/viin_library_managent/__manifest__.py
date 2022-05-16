@@ -81,7 +81,7 @@ Tính năng chính
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'books_view',
+        'books_view.xml',
         'menu_root.xml',
     ],
     # only loaded in demonstration mode
