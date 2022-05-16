@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="book_action" model="ir.actions.act_window">
+			<field name="name">Book</field>
+			<field name="res_model">library.management.books</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="book_root_menu" model="ir.ui.view">
+			<field name="name">academy.course.inherit</field>
+			<field name="model">library.management.books</field>
+			<field name="inherit_id" ref="library_root_menu" />
+		</record>
+
+
+
+	</data>
+</odoo>
