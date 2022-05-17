@@ -1,0 +1,59 @@
+<odoo>
+	<record id="clothing_management_view_tree" model="ir.ui.view">
+		<field name="name">clothing.management.tree</field>
+		<field name="model">clothing.management</field>
+		<field name="arch" type="xml">
+			<tree string="Clothing Management">
+				<field name="name" />
+				<field name="name_of_product" />
+				<field name="mota" />
+				<field name="type" />
+				<field name="size" />
+				<field name="color" />
+				<field name="price" />
+			</tree>
+		</field>
+	</record>
+	<record id="clothing_management_view_form" model="ir.ui.view">
+		<field name="name">clothing.management.form</field>
+		<field name="model">clothing.management</field>
+		<field name="arch" type="xml">
+			<form string="Clothing Management">
+				<sheet>
+					<field name="image" widget="image" class="oe_avatar"/>
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name"></field>
+						</h1>
+					</div>
+					<group>
+						<field name="name_of_product" />
+						<field name="mota" />
+					</group>
+
+					<group>
+						<field name="type" />
+						<field name="size" />
+						<field name="color" />
+						<field name="price" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="clothing_management_action"
+		model="ir.actions.act_window">
+		<field name="name">Clothing management</field>
+		<field name="res_model">clothing.management</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="clothing_management_menu"
+		name="CLothing management" groups="base.group_user" />
+	<menuitem id="clothing_management_menu_1" name="Cataloge"
+		action="clothing_management_action" parent="clothing_management_menu"
+		groups="base.group_user" />
+
+</odoo>
