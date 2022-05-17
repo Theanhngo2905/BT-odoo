@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="dormitory_manager_tree_view" model="ir.ui.view">
+			<field name="name">dormitory.manager.tree.view</field>
+			<field name="model">dormitory.manager</field>
+			<field name="arch" type="xml">
+				<tree string="Danh sách KTX">
+					<field name="name" />
+					<field name="email" />
+					<field name="address" />
+					<field name="phone_number" />
+					<field name="year_of_birth" />
+					<!-- <button name="test" string="Test" type="object" class="oe_highlight"/> -->
+				</tree>
+			
+			</field>
+		</record>
+		<record id="dormitory_manager_form_view" model="ir.ui.view">
+			<field name="name">dormitory.manager.form.view</field>
+			<field name="model">dormitory.manager</field>
+			<field name="arch" type="xml">
+				<form string="Thông tin KTX">
+					<sheet>
+						<group>
+							<field name="image" widget="image" />
+						</group>
+						<group>
+							<field name="name" />
+							<field name="email" />
+							<field name="address" />
+							<field name="phone_number" />
+							<field name="year_of_birth" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="dormitory_manager_action" model="ir.actions.act_window">
+			<field name="name">dormitory.manager.action</field>
+			<field name="res_model">dormitory.manager</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="dormitory_manager_menu_root"
+		name="Dormitory Manager"
+		sequence="10"/>
+		<menuitem id="dormitory_manager_menu_item"
+		name="Dormitory Manager"
+		sequence="1"
+		parent="dormitory_manager_menu_root"
+		action="dormitory_manager_action"/>
+	</data>
+</odoo>

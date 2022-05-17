@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="dormitory_room_tree_view" model="ir.ui.view">
+			<field name="name">dormitory.room.tree.view</field>
+			<field name="model">dorm.room</field>
+			<field name="arch" type="xml">
+				<tree string="Danh sách phòng">
+					<field name="name" />
+					<field name="floor" />
+					<field name="total_student" />
+					<field name="student_register" />
+					<field name="dormitory_manager_id"/>
+					<field name="total_price" />
+				</tree>
+			
+			</field>
+		</record>
+		<record id="dormitory_room_form_view" model="ir.ui.view">
+			<field name="name">dormitory.room.form.view</field>
+			<field name="model">dorm.room</field>
+			<field name="arch" type="xml">
+				<form string="Thông tin phòng">
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="floor" />
+							<field name="total_student" />
+							<field name="price" />
+							<field name="currency_id" />
+							<field name="dormitory_manager_id" />
+							<field name="student_ids" />
+							<field name="student_register" />
+							<field name="total_price" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="dormitory_room_action" model="ir.actions.act_window">
+			<field name="name">dormitory.room.action</field>
+			<field name="res_model">dorm.room</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="dormitory_room_menu_item"
+		name="DormRoom"
+		sequence="1"
+		parent="dormitory_manager_menu_root"
+		action="dormitory_room_action"/>
+	</data>
+</odoo>

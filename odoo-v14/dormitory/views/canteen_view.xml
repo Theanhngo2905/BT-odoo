@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="canteen_tree_view" model="ir.ui.view">
+			<field name="name">canteen.tree.view</field>
+			<field name="model">canteen.information</field>
+			<field name="arch" type="xml">
+				<tree string="Danh sách món ăn">
+					<field name="name" />
+					<field name="price" />
+					<field name="currency_id" />
+				</tree>
+			
+			</field>
+		</record>
+		<record id="canteen_form_view" model="ir.ui.view">
+			<field name="name">canteen.form.view</field>
+			<field name="model">canteen.information</field>
+			<field name="arch" type="xml">
+				<form string="Thông tin món ăn">
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="price" />
+							<field name="currency_id" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="canteen_action" model="ir.actions.act_window">
+			<field name="name">canteen.action</field>
+			<field name="res_model">canteen.information</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="canteen_menu_item"
+		name="CanTeen"
+		sequence="4"
+		parent="dormitory_manager_menu_root"
+		action="canteen_action"/>
+	</data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dormitory_manager,access_dormitory_manager,model_dormitory_manager,base.group_user,1,1,1,1
+access_dorm_room,access_dorm_room,model_dorm_room,base.group_user,1,1,1,1
+access_student,access_student,model_student,base.group_user,1,1,1,1
+access_canteen_information,access_canteen_information,model_canteen_information,base.group_user,1,1,1,1

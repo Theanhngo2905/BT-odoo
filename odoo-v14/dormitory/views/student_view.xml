@@ -1,0 +1,58 @@
+<odoo>
+	<data>
+		<record id="student_view_tree" model = "ir.ui.view">
+			<field name="name">Student.tree</field>
+			<field name="model">student</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name_student" />
+					<field name="student_code" placeholder="2017xxxx"/>
+					<field name="date_of_birth" />
+					<field name="address" />	
+					<field name="khoa_hoc" />
+					<field name="class_student" />
+					<field name="email" />
+					<field name="phone" />
+					<field name="room_id" />
+					<field name="canteen_list" widget="many2many_tags" string="Đăng ký các món ăn sáng"/>
+					<field name="total_price" />
+				</tree>
+			</field>
+		</record>
+		<record id="student_view_form" model="ir.ui.view">
+			<field name="name">student.view.form</field>
+			<field name="model">student</field>
+			<field name="arch" type="xml">
+				<form string="Thông tin sinh viên">
+					<sheet>	
+						<group>
+							<field name="name_student" />
+							<field name="student_code" />
+							<field name="image" widget="image" />
+							<field name="date_of_birth" />
+							<field name="address" />	
+							<field name="khoa_hoc" />
+							<field name="class_student" />
+							<field name="email" />
+							<field name="phone" placeholder="eg.123-456-7890"/>
+							<field name="room_id" />
+							<field name="total_student" />
+							<field name="canteen_list" widget="many2many_checkboxes" string="Đăng ký các món ăn sáng"/>
+							<field name="total_price" optional="show" sum="Total" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="student_action" model="ir.actions.act_window">
+			<field name="name">student.action</field>
+			<field name="res_model">student</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="student_menu_item"
+		name="Student"
+		sequence="3"
+		parent="dormitory_manager_menu_root"
+		action="student_action"/>
+	</data>
+</odoo>
