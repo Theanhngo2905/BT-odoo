@@ -1,0 +1,47 @@
+<odoo>
+	<record id="create_item_view_form" mmodel="ir.ui.view">
+		<field name="name">create.item.form</field>
+		<field name="model">create.item</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<field name="image" widget="image" class="oe_avatar" />
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name"></field>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="item_id" />
+						</group>
+						<group>
+							<field name="mota" />
+							<field name="type" />
+							<field name="size" />
+							<field name="color" />
+						</group>
+						<group>
+							<field name="state" />
+							<field name="item_level" />
+							<field name="price" />
+							<field name="ngay_nhap_kho" />
+							<field name="item_relate" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="create_item_action" model="ir.actions.act_window">
+		<field name="name">Create new item</field>
+		<field name="res_model">create.item</field>
+		<field name="view_mode">form</field>
+		<field name="sequence">10</field>
+	</record>
+
+	<menuitem id="create_item_menu" name="Create item" action="create_item_action"
+		parent="clothing_management_menu" groups="base.group_user" />
+</odoo>

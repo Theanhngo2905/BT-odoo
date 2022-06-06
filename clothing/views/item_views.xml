@@ -1,0 +1,107 @@
+<odoo>
+	<record id="item_view_tree" model="ir.ui.view">
+		<field name="name">item.tree</field>
+		<field name="model">item</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" />
+				<field name="item_id" />
+				<field name="mota" />
+				<field name="type" />
+				<field name="size" />
+				<field name="color" />
+				<field name="state" />
+				<field name="item_level" />
+				<field name="price" />
+				<field name="ngay_nhap_kho" />
+				<field name="item_relate" />
+				<button name="unlink_test" string="Unlink" type="object"
+					class="oe_highlight" />
+				<button name="filter_test" string="Filter" type="object"
+					class="oe_highlight" />
+				<button name="browse_test" string="Browse" type="object"
+					class="oe_highlight" />
+				<button name="write_test" string="Write" type="object"
+					class="oe_highlight" />
+				<!-- <button name="copy_test" string="Copy" type="object" class="oe_highlight" 
+					/> -->
+				<button name="name_create_test" string="Create_name"
+					type="object" class="oe_highlight" />
+				<button name="search_test" string="Search" type="object"
+					class="oe_highlight" />
+				<button name="search_count_test" string="Searchcount" type="object" 
+					class="oe_highlight" />
+				<button name="search_name_test" string="Searchname"
+					type="object" class="oe_highlight" />
+				<!-- <button name="read_test" string="Read" type="object" class="oe_highlight" 
+					/> -->
+				<button name="read_group_test" string="Readgroup"
+					type="object" class="oe_highlight" />
+				<button name="field_get_test" string="Fieldget" type="object" class="oe_highlight" 
+					/>
+				<button name="field_view_get" string="Fieldviewget" type="object"
+					class="oe_highlight" />
+				<button name="sort_test" string="Sort" type="object"
+					class="oe_highlight" />
+				<button name="button_create_multi" string="create_multi" type="object"
+					class="oe_highlight" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="item_view_form" model="ir.ui.view">
+		<field name="name">item.form</field>
+		<field name="model">item</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+				
+					<header>
+						
+						<button name="change_to_new" type="object" string="New" />
+						<button name="change_to_secondhand" type="object"
+							string="Secondhand" />
+						<button name="change_to_doitra" type="object" string="Return" />
+						
+					</header>
+				
+					<field name="image" widget="image" class="oe_avatar" />
+					<div class="oe_title">
+						<label for="name"></label>
+						<h1>
+							<field name="name"></field>
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="item_id" />
+						</group>
+						<group>
+							<field name="mota" />
+							<field name="type" />
+							<field name="size" />
+							<field name="color" />
+						</group>
+						<group>
+							<field name="state" />
+							<field name="item_level" />
+							<field name="price" />
+							<field name="ngay_nhap_kho" />
+							<field name="item_relate" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="item_action" model="ir.actions.act_window">
+		<field name="name">Item</field>
+		<field name="res_model">item</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="item_menu" name="Item" action="item_action"
+		parent="clothing_management_menu" groups="group_item_user" />
+
+</odoo>

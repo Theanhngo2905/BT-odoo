@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clothing_management,clothing.management,model_clothing_management,base.group_user,1,1,1,1
+access_item_user,item,model_item,clothing.group_item_user,1,0,0,0
+access_item_manager,item,model_item,clothing.group_item_manager,1,1,1,1
+access_saleman,saleman,model_saleman,base.group_system,1,1,1,1
+access_customer,customer,model_customer,base.group_user,1,1,1,1
+access_manager,manager,model_manager,base.group_system,1,1,1,1
