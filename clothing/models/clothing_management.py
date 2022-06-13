@@ -1,6 +1,7 @@
 
 
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 
 class ClothingManagement(models.Model):
@@ -8,14 +9,58 @@ class ClothingManagement(models.Model):
     _description = 'Clothing Management'
     
     name = fields.Char(require=True, string="SKU", size=8, trim=True, translate=False, groups='base.group_system')
-    description = fields.Text(string="Detail")
+    description = fields.Text(string="Detail", default='AAAAA')
     clothing_ids = fields.One2many('item', 'item_id', string="Sản phẩm")
     amount = fields.Integer(string="Total of product")
     start_date = fields.Date(string="Start date", default=fields.Date.today, help="Support for calendar view")
     stop_date = fields.Date(string="Stop date", help="Support for calendar view")
-    quantity_end = fields.Integer(string="Số lượng còn lại", computed="_compute_quantity_end", 
-                                  inverse="_set_amount", search="_search_all")
+    date_time = fields.Datetime(string="DateTime")
+    # quantity_end = fields.Integer(string="Số lượng còn lại", computed="_compute_quantity_end", 
+    #                               inverse="_set_amount", search="_search_all")
     
+    def test_orm(self):
+        """Test hàm create"""
+        vals_list = [
+            {
+                'name': 'Loan',
+                # 'description': 'Cindy',
+                'amount': 100,
+                'start_date': '2022-06-12',
+                'stop_date': '2022-06-18',
+                'date_time': '2022-06-12 08:00:00',
+            },
+        ]
+        # self.env['clothing.management'].create(vals_list)
+        """Test hàm copy"""
+        # self.copy()
+        """Test hàm default_get()"""
+        # self.default_get(['description', 'start_date'])
+        #
+
+        """Test hàm name_create(name)"""
+        # self.env['clothing.management'].name_create('Dung')
+        
+        """Test hàm write()"""
+        # item_value = {
+        #     'name': 'Lien ket voi Loan'
+        # }
+        #
+        # items = self.env['item'].search([])
+        # vals = {
+        #     'amount': 200,
+        #     'clothing_ids': [(6, 0, items.ids)]
+        # }
+        # self.write(vals)
+        
+        """Test ham fields_get()"""
+        # self.fields_get()
+        
+        clothing_view_tree = self.env.ref('clothing.clothing_management_view_tree')
+        pass
+
+    def name_get(self):
+        return super(ClothingManagement, self).name_get()
+
     # thực hành actions URL
     def custom_button_method(self):
         return {

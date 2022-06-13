@@ -10,6 +10,7 @@
 				<field name="amount" />
 				<field name="start_date" />
 				<field name="stop_date" />
+				<field name="date_time" />
 				<button name="custom_button_method" type="object"
 					string="test_URL_Action" class="oe_highlight" />
 				<button name="create_items" string="Create" type="object"
@@ -27,6 +28,10 @@
 		<field name="model">clothing.management</field>
 		<field name="arch" type="xml">
 			<form>
+				<header>
+				    <button name="test_orm" string="Test ORM"
+                        type="object" class="oe_highlight" />
+				</header>
 				<sheet>
 					<group>
 						<field name="name" />
@@ -35,6 +40,7 @@
 						<field name="amount" />
 						<field name="start_date" />
 						<field name="stop_date" />
+						<field name="date_time"/>
 					</group>
 
 				</sheet>
